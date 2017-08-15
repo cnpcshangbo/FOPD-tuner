@@ -32,3 +32,5 @@ git clone https://github.com/cnpcshangbo/FOPD-tunner.git
 ```
 
 # 4. Run examples
+## Run first cell of "cal_lambda_ki_kp_bode.m"
+Note: When lambda is negative, a PI controller becomes a PD controller.
