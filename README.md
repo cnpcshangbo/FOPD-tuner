@@ -31,12 +31,13 @@ Convert the identified model to this format:
 
 Then we can get the parameter k and tau.
 
-## FOTF toolbox
+## FOTF Toolbox
+https://www.mathworks.com/matlabcentral/fileexchange/60874-fotf-toolbox
 
 ## Oustaloup
 
 # 3. Downloading FOPD-tunner library and run examples
-##Clone the repository:
+## Clone the repository:
 ```
 git clone https://github.com/cnpcshangbo/FOPD-tunner.git
 ```
@@ -47,7 +48,19 @@ git clone https://github.com/cnpcshangbo/FOPD-tunner.git
 Enter the folder named "1. iopid_tune_pid", open "iopid_tune.m", update the plant parameters identified MATLAB System Identification Toolbox, then run it to tune IOPID controller and get related parameters (integer order PID parameters _kp_, _ki_, _kd_, cross over frequency _omega_c_ and phase margin _phi_).
 
 ## Tune FOPD controller
-Set fractional order _lambda_ to -1~0, update the parameters _k_ and _tau_, cross over frequency _omega_c_ and phase margin _phi_, then run first cell of "cal_lambda_ki_kp_bode.m" and see the three curves. Zoom the curves to find crosspoints. The coordinates of the crosspoints are _lambda_ and _ki_, after that calculate _kp_. The we can get the transfer function of the tuned FOPD controller.
+
+### Setting parameters
+Set fractional order _lambda_ to -1~0, update the parameters _k_ and _tau_, cross over frequency _omega_c_ and phase margin _phi_.
 
 Note: When _lambda_ is negative, a PI controller becomes a PD controller.
+
+### Plotting ki against lambda
+Run the first cell of "cal_lambda_ki_kp_bode.m". You will see the three curves. Zoom the curves to find crosspoints. The coordinates of the crosspoints are _lambda_ and _ki_.
+
+### Verify the crosspoints
+Run the "Solution 1" cell of "cal_lambda_ki_kp_bode.m" to double check if the crosspoint is the solution of the equations. 
+
+### Verify the tuned FOPD controller
+Run the "Verify the controller 1" cell of "cal_lambda_ki_kp_bode.m" to verify if the phase curve is flat at crossover frequency. At the same time _kp_ will be displayed. The we can get the transfer function of the tuned FOPD controller.
+
 
