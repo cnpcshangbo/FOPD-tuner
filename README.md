@@ -44,10 +44,10 @@ git clone https://github.com/cnpcshangbo/FOPD-tunner.git
 # 4. Run examples
 
 ## Tune IOPID controller
-Enter the folder named "1. iopid_tune_pid", open "iopid_tune.m", update the plant parameters, then run it to tune IOPID controller and get related parameters (integer order PID parameters, cross over Frequency omega_c and phase margin) 
+Enter the folder named "1. iopid_tune_pid", open "iopid_tune.m", update the plant parameters identified MATLAB System Identification Toolbox, then run it to tune IOPID controller and get related parameters (integer order PID parameters _kp_, _ki_, _kd_, cross over frequency _omega_c_ and phase margin _phi_).
 
 ## Tune FOPD controller
-Set lambda to -1~0, update the parameters k and tau, run first cell of "cal_lambda_ki_kp_bode.m" and see the figure. Check the curve to find cross point.
+Set fractional order _lambda_ to -1~0, update the parameters _k_ and _tau_, cross over frequency _omega_c_ and phase margin _phi_, then run first cell of "cal_lambda_ki_kp_bode.m" and see the three curves. Zoom the curves to find crosspoints. The coordinates of the crosspoints are _lambda_ and _ki_, after that calculate _kp_. The we can get the transfer function of the tuned FOPD controller.
 
-Note: When lambda is negative, a PI controller becomes a PD controller.
+Note: When _lambda_ is negative, a PI controller becomes a PD controller.
 
