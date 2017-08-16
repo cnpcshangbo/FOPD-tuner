@@ -1,0 +1,21 @@
+C =
+ 
+             1          
+  Kp + Ki * --- + Kd * s
+             s          
+
+  with Kp = 2.89, Ki = 1.04, Kd = 1.79
+ 
+Continuous-time PID controller in parallel form.
+
+
+info = 
+
+                Stable: 1
+    CrossoverFrequency: 2.5085
+           PhaseMargin: 83.8783
+
+===================================================
+\omega_{c}=2.51 \ rad/s		   
+\phi_{m}=83.9 deg
+\lambda=
