@@ -63,4 +63,8 @@ Run the "Solution 1" cell of "cal_lambda_ki_kp_bode.m" to double check if the cr
 ### Verify the tuned FOPD controller
 Run the "Verify the controller 1" cell of "cal_lambda_ki_kp_bode.m" to verify if the phase curve is flat at crossover frequency. At the same time _kp_ will be displayed. The we can get the transfer function of the tuned FOPD controller.
 
+### Controller analysis with Simulink
+Open the file "run_simulink.m", update the parameters and run the script.
+![image](https://user-images.githubusercontent.com/4831029/29388574-4c7dc9de-829a-11e7-973c-0b3f28b3df58.png)
+![image](https://user-images.githubusercontent.com/4831029/29388561-3d999862-829a-11e7-9cc8-073a782e5854.png)
 
