@@ -1,6 +1,6 @@
 % First we need the plant transfer function.
 s=tf('s');
-p_tf=1.0263/(0.71*s+1)/s;
+p_tf=1.0584/(0.6277*s+1)/s;
 
 %% tune
 % opts = pidtuneOptions('CrossoverFrequency',32,'PhaseMargin',90);
