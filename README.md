@@ -21,6 +21,16 @@ If you use FOPD-tunner in an academic work, please cite:
 # 2. Prerequisites
 We have tested the library in **MATLAB 2016b** and **Windows 7**, but it should be easy to run in other platforms.
 
+## Control model
+<img width="433" alt="screenshot 2017-08-15 17 51 47" src="https://user-images.githubusercontent.com/4831029/29342990-04fdb158-81e3-11e7-82b1-55edb5378ec8.png">
+
+## MATLAB System Identification Toolbox
+Convert the identified model to this format:
+
+<img width="170" alt="screenshot 2017-08-15 20 25 37" src="https://user-images.githubusercontent.com/4831029/29346105-f81f3aaa-81f7-11e7-9510-2267dedcafc9.png">
+
+Then we can get the parameter k and tau.
+
 ## FOTF toolbox
 
 ## Oustaloup
@@ -32,5 +42,8 @@ git clone https://github.com/cnpcshangbo/FOPD-tunner.git
 ```
 
 # 4. Run examples
-## Run first cell of "cal_lambda_ki_kp_bode.m"
+## Use **pidtune** to tune IOPID controller and get related parameters
+
+## Set lambda to -1~0, update the parameters k and tau, run first cell of "cal_lambda_ki_kp_bode.m" and see the figure. Check the curve to find cross point
 Note: When lambda is negative, a PI controller becomes a PD controller.
+
