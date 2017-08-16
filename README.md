@@ -42,8 +42,12 @@ git clone https://github.com/cnpcshangbo/FOPD-tunner.git
 ```
 
 # 4. Run examples
-## Use **pidtune** to tune IOPID controller and get related parameters
 
-## Set lambda to -1~0, update the parameters k and tau, run first cell of "cal_lambda_ki_kp_bode.m" and see the figure. Check the curve to find cross point
+## Tune IOPID controller
+Enter the folder named "1. iopid_tune_pid", open "iopid_tune.m", update the plant parameters, then run it to tune IOPID controller and get related parameters (integer order PID parameters, cross over Frequency omega_c and phase margin) 
+
+## Tune FOPD controller
+Set lambda to -1~0, update the parameters k and tau, run first cell of "cal_lambda_ki_kp_bode.m" and see the figure. Check the curve to find cross point.
+
 Note: When lambda is negative, a PI controller becomes a PD controller.
 
