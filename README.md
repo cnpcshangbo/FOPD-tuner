@@ -68,3 +68,13 @@ Open the file "run_simulink.m", update the parameters and run the script.
 ![image](https://user-images.githubusercontent.com/4831029/29388574-4c7dc9de-829a-11e7-973c-0b3f28b3df58.png)
 ![image](https://user-images.githubusercontent.com/4831029/29388561-3d999862-829a-11e7-9cc8-073a782e5854.png)
 
+## Co-Simulation with Gazebo
+We use the [Robotics System Toolbox](https://www.mathworks.com/products/robotics.html) to cooperate with Gazebo. The Gazebo part follows [Erlerobotics simulation](http://docs.erlerobotics.com/simulation).
+
+Follow this document to take off the drone:
+http://docs.erlerobotics.com/simulation/vehicles/erle_copter/tutorial_5
+![drone taken off](https://user-images.githubusercontent.com/4831029/29427393-80214438-833e-11e7-9db6-0e7f07d23f63.png)
+
+Launch MATLAB
+Install Robotics System Toolbox. 
+
