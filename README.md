@@ -71,10 +71,17 @@ Open the file "run_simulink.m", update the parameters and run the script.
 ## Co-Simulation with Gazebo
 We use the [Robotics System Toolbox](https://www.mathworks.com/products/robotics.html) to cooperate with Gazebo. The Gazebo part follows [Erlerobotics simulation](http://docs.erlerobotics.com/simulation).
 
-Follow this document to take off the drone:
+### Follow this document to take off the drone:
 http://docs.erlerobotics.com/simulation/vehicles/erle_copter/tutorial_5
 ![drone taken off](https://user-images.githubusercontent.com/4831029/29427393-80214438-833e-11e7-9db6-0e7f07d23f63.png)
 
-Launch MATLAB
-Install Robotics System Toolbox. 
+### Launch MATLAB
+Install Robotics System Toolbox. Initial ROS in MATLAB.
+
+![ROS with MATLAB node](https://user-images.githubusercontent.com/4831029/29428228-48d8f50e-8341-11e7-9a25-2be983c9e238.png)
+
+Use the ROS Publish block in Simulink to publish topic for velocity setpoint.
+![ROS Publish block](https://user-images.githubusercontent.com/4831029/29436852-87877c46-8362-11e7-94ab-7453cf5a540a.png)
+
+[![Use Simulink to move a drone in Gazebo](https://user-images.githubusercontent.com/4831029/29438864-60043fcc-836e-11e7-84a4-ef462bb2f434.png)](https://www.youtube.com/watch?v=9ukGdrOceOk)
 
