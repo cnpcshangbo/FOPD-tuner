@@ -48,7 +48,40 @@ git clone https://github.com/cnpcshangbo/FOPD-tunner.git
 Enter the folder named "1. iopid_tune_pid", open "iopid_tune.m", update the plant parameters identified MATLAB System Identification Toolbox, then run it to tune IOPID controller and get related parameters (integer order PID parameters _kp_, _ki_, _kd_, cross over frequency _omega_c_ and phase margin _phi_).
 
 ## Tune FOPD controller
-Set fractional order _lambda_ to -1~0, update the parameters _k_ and _tau_, cross over frequency _omega_c_ and phase margin _phi_, then run first cell of "cal_lambda_ki_kp_bode.m" and see the three curves. Zoom the curves to find crosspoints. The coordinates of the crosspoints are _lambda_ and _ki_, after that calculate _kp_. The we can get the transfer function of the tuned FOPD controller.
+
+### Setting parameters
+Set fractional order _lambda_ to -1~0, update the parameters _k_ and _tau_, cross over frequency _omega_c_ and phase margin _phi_.
 
 Note: When _lambda_ is negative, a PI controller becomes a PD controller.
+
+### Plotting ki against lambda
+Run the first cell of "cal_lambda_ki_kp_bode.m". You will see the three curves. Zoom the curves to find crosspoints. The coordinates of the crosspoints are _lambda_ and _ki_.
+
+### Verify the crosspoints
+Run the "Solution 1" cell of "cal_lambda_ki_kp_bode.m" to double check if the crosspoint is the solution of the equations. 
+
+### Verify the tuned FOPD controller
+Run the "Verify the controller 1" cell of "cal_lambda_ki_kp_bode.m" to verify if the phase curve is flat at crossover frequency. At the same time _kp_ will be displayed. The we can get the transfer function of the tuned FOPD controller.
+
+### Controller analysis with Simulink
+Open the file "run_simulink.m", update the parameters and run the script.
+![image](https://user-images.githubusercontent.com/4831029/29388574-4c7dc9de-829a-11e7-973c-0b3f28b3df58.png)
+![image](https://user-images.githubusercontent.com/4831029/29388561-3d999862-829a-11e7-9cc8-073a782e5854.png)
+
+## Co-Simulation with Gazebo
+We use the [Robotics System Toolbox](https://www.mathworks.com/products/robotics.html) to cooperate with Gazebo. The Gazebo part follows [Erlerobotics simulation](http://docs.erlerobotics.com/simulation).
+
+### Follow this document to take off the drone:
+http://docs.erlerobotics.com/simulation/vehicles/erle_copter/tutorial_5
+![drone taken off](https://user-images.githubusercontent.com/4831029/29427393-80214438-833e-11e7-9db6-0e7f07d23f63.png)
+
+### Launch MATLAB
+Install Robotics System Toolbox. Initial ROS in MATLAB.
+
+![ROS with MATLAB node](https://user-images.githubusercontent.com/4831029/29428228-48d8f50e-8341-11e7-9a25-2be983c9e238.png)
+
+Use the ROS Publish block in Simulink to publish topic for velocity setpoint.
+![ROS Publish block](https://user-images.githubusercontent.com/4831029/29436852-87877c46-8362-11e7-94ab-7453cf5a540a.png)
+
+[![Use Simulink to move a drone in Gazebo](https://user-images.githubusercontent.com/4831029/29438864-60043fcc-836e-11e7-84a4-ef462bb2f434.png)](https://www.youtube.com/watch?v=9ukGdrOceOk)
 
