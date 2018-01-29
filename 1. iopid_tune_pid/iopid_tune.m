@@ -1,6 +1,10 @@
-% First we need the plant transfer function.
+%% Setting plant parameters
+K = 1.016;
+T1 = 0.332;
+
+%% First we need the plant transfer function.
 s=tf('s');
-p_tf=1.0584/(0.6277*s+1)/s;
+p_tf=K/(T1*s+1)/s;
 
 %% tune
 % opts = pidtuneOptions('CrossoverFrequency',32,'PhaseMargin',90);

@@ -2,10 +2,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Setting parameters and plotting ki against lambda
 lamda=-1:0.0001:-0;
-k=1.0584;%plant parameters. p(s)=\frac{k}{\tau s+1}\frac{1}{s}
-tao=0.63;%plant parameters
-omega=2.84;%from IO bode plot.
-phi=83.89/180*pi;%from IO bode plot.
+k=1.016;%plant parameters. p(s)=\frac{k}{\tau s+1}\frac{1}{s}
+tao=0.332;%plant parameters
+omega=5.3645;%from IO bode plot.
+phi=83.8783/180*pi;%from IO bode plot.
 
 %
 ki0=tan(atan(1/omega/tao)-phi)./(omega.^(-lamda).*sin(pi*lamda/2)-omega.^(-lamda).*cos(pi*lamda/2)*tan(atan(1/omega/tao)-phi));
@@ -27,7 +27,7 @@ legend('ki0','ki1','ki2')
 %\lambda=-0.9855;ki2=0.2431
 %% Solution 1
 % To verify the crosspoint with ki1
-lamda=-0.97; % update lambda value here, make sure the value is negative.
+lamda=-0.9693; % update lambda value here, make sure the value is negative.
 a=tao*omega.^(-2*lamda);
 b=-lamda.*sin(pi*lamda/2).*omega.^(-lamda-1)*(omega^2*tao^2+1)+2*tao*omega.^(-lamda).*cos(pi*lamda/2);
 c=tao;

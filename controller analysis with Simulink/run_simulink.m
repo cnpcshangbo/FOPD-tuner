@@ -1,14 +1,14 @@
 clear;
-assignin('base','Kp',2.95);
-assignin('base','Ki',0.55);
-assignin('base','Lambda',-0.97);
+assignin('base','Kp',5.8303);
+assignin('base','Ki',0.2962);
+assignin('base','Lambda',-0.9693);
 %
-assignin('base','ioKp',3.17);
-assignin('base','ioKi',1.29);
-assignin('base','ioKd',1.73);
+assignin('base','ioKp',6.25);
+assignin('base','ioKi',4.81);
+assignin('base','ioKd',1.81);
 
-assignin('base','tau',0.6277);
-assignin('base','k',1.0584);
+assignin('base','tau',0.332);
+assignin('base','k',1.016);
 
 [t_time,x_state,y_out]=sim('verify1.slx',[0,10]);
 %% draw step response comparison
@@ -35,13 +35,18 @@ iosys_tf=ioc_tf*p_tf;
 h1=figure(2);
 %set(h1,'Name','FOPD')
 bode(sys_tf);
+% h=findobj(gcf,'Type', 'line');
+% set(h(4),'LineStyle','--');
+
 grid on
 hold on
 %h2=figure(2);
 %set(h2,'Name','IOPD')
 bode(iosys_tf);
-%h=findobj('Type', 'line');
-%set(h(3),'LineStyle','--')
+%h=findobj(gcf,'Type', 'line');
+%set(h(3),'LineStyle','--');
+%set(h(5),'LineStyle','--','linewidth',2);
+
 %grid on
-legend('FOPD','IOPID');
+lgd=legend('FOPD','IOPID');
 hold off
