@@ -2,9 +2,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Setting parameters and plotting ki against lambda
 lamda=-1:0.0001:-0;
-k=1.016;%plant parameters. p(s)=\frac{k}{\tau s+1}\frac{1}{s}
-tao=0.332;%plant parameters
-omega=5.3645;%from IO bode plot.
+k=0.99217;%plant parameters. p(s)=\frac{k}{\tau s+1}\frac{1}{s}
+tao=0.2486;%plant parameters
+omega=7.1642;%from IO bode plot.
 phi=83.8783/180*pi;%from IO bode plot.
 
 %
