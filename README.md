@@ -50,7 +50,7 @@ Enter the folder named "1. iopid_tune_pid", open "iopid_tune.m", update the plan
 ## Tune FOPD controller
 
 ### Setting parameters
-Set fractional order _lambda_ to -1~0, update the parameters _k_ and _tau_, cross over frequency _omega_c_ and phase margin _phi_.
+Open file "cal_lambda_ki_kp_bode.m". Set fractional order _lambda_ to -1~0, update the parameters _k_ and _tau_, cross over frequency _omega_c_ and phase margin _phi_.
 
 Note: When _lambda_ is negative, a PI controller becomes a PD controller.
 
