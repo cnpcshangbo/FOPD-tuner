@@ -1,6 +1,6 @@
 %% Setting plant parameters
-K = 0.99217;
-T1 = 0.2486;
+K = 1.102;
+T1 = 0.17936;
 
 %% First we need the plant transfer function.
 s=tf('s');
