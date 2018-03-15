@@ -1,14 +1,14 @@
 clear;
-assignin('base','Kp',7.9733);
-assignin('base','Ki',0.2238);
+assignin('base','Kp',9.9498);
+assignin('base','Ki',0.1631);
 assignin('base','Lambda',-0.9693);
 %
-assignin('base','ioKp',8.55);
-assignin('base','ioKi',8.79);
-assignin('base','ioKd',1.85);
+assignin('base','ioKp',10.7);
+assignin('base','ioKi',15.2);
+assignin('base','ioKd',1.66);
 
-assignin('base','tau',0.2486);
-assignin('base','k',0.99217);
+assignin('base','tau',0.17936);
+assignin('base','k',1.102);
 
 [t_time,x_state,y_out]=sim('verify1.slx',[0,10]);
 %% draw step response comparison
