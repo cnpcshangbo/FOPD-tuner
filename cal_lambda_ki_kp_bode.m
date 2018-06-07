@@ -2,10 +2,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Setting parameters and plotting ki against lambda
 lamda=-1:0.0001:-0;
-k=1.102;%plant gain. p(s)=\frac{k}{\tau s+1}\frac{1}{s}
-tao=0.17936;%plant time constant
-omega=9.9298;%CrossoverFrequency from IO bode plot.
-phi=83.8783/180*pi;%from IO bode plot.
+k=-0.8592;%plant gain. p(s)=\frac{k}{\tau s+1}\frac{1}{s}
+tao=1.0710;%plant time constant
+omega=1.66;%CrossoverFrequency from IO bode plot.
+phi=83.9/180*pi;%from IO bode plot.
 
 %
 ki0=tan(atan(1/omega/tao)-phi)./(omega.^(-lamda).*sin(pi*lamda/2)-omega.^(-lamda).*cos(pi*lamda/2)*tan(atan(1/omega/tao)-phi));
@@ -22,12 +22,13 @@ ki2=(-b-(b.^2-4*a*c).^0.5)./(2*a);
 
 figure(1)
 plot(lamda, ki0,'r-.',lamda, ki1,'b-', lamda, ki2,'g-')
+xlabel('lambda');ylabel('ki');
 legend('ki0','ki1','ki2')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\lambda=-0.9855;ki2=0.2431
 %% Solution 1
 % To verify the crosspoint with ki1
-lamda=-0.9693; % update lambda value here, make sure the value is negative.
+lamda=-0.9695; % update lambda value here, make sure the value is negative.
 a=tao*omega.^(-2*lamda);
 b=-lamda.*sin(pi*lamda/2).*omega.^(-lamda-1)*(omega^2*tao^2+1)+2*tao*omega.^(-lamda).*cos(pi*lamda/2);
 c=tao;
