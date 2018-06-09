@@ -8,7 +8,7 @@ p_tf=K/(T1*s+1)/s;
 
 %% tune
 % opts = pidtuneOptions('CrossoverFrequency',32,'PhaseMargin',90);
-[C, info] = pidtune(p_tf, 'pid')
+[C, info] = pidtune(p_tf, 'pid', 0.83)
 
 %% controller transfer function
 ioc_tf=C.Kp+C.Ki/s+C.Kd*s;
