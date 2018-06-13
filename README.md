@@ -19,7 +19,7 @@ If you use FOPD-tunner in an academic work, please cite:
     }
 
 # 2. Prerequisites
-We have tested the library in **MATLAB 2016b** and **Windows 7**, but it should be easy to run in other platforms.
+We have tested the library in **MATLAB 2018a** and **Windows 7**, but it should be easy to run in other platforms.
 
 ## Control model
 <img width="433" alt="screenshot 2017-08-15 17 51 47" src="https://user-images.githubusercontent.com/4831029/29342990-04fdb158-81e3-11e7-82b1-55edb5378ec8.png">
@@ -45,20 +45,29 @@ git clone https://github.com/cnpcshangbo/FOPD-tunner.git
 # 4. Run examples
 
 ## Tune IOPID controller
-Enter the folder named "1. iopid_tune_pid", open "iopid_tune.m", update the plant parameters identified MATLAB System Identification Toolbox, then run it to tune IOPID controller and get related parameters (integer order PID parameters _kp_, _ki_, _kd_, cross over frequency _omega_c_ and phase margin _phi_).
+Enter the folder named "1. iopid_tune_pid", open "iopid_tune.m", update the plant parameters identified with MATLAB System Identification Toolbox and set cross-over frequency _omega_c_ and phase margin _phi_.
+```matlab
+%% Setting plant parameters
+global K T1 wc phi %inputs
+K = -0.8592; %plant gain
+T1 = 1.0710; %plant time constant
+wc = 1.2; %crossoverfrequency
+phi = 83.9; %phase margin
+```
+then run it to tune IOPID controller and get related parameters (integer order PID parameters _kp_, _ki_, _kd_, ).
 
 ## Tune FOPD controller
 
 ### Setting parameters
-Open file "cal_lambda_ki_kp_bode.m". Set fractional order _lambda_ to -1~0, update the parameters _k_ and _tau_, cross over frequency _omega_c_ and phase margin _phi_.
+Open file "cal_lambda_ki_kp_bode.m". Set fractional order _lambda_ to -1~0.
 
-Note: When _lambda_ is negative, a PI controller becomes a PD controller.
+Note: When _lambda_ is negative, a FOPI controller becomes a FOPD controller.
 
 ### Plotting ki against lambda
 Run the first cell of "cal_lambda_ki_kp_bode.m". You will see the three curves. Zoom the curves to find crosspoints. The coordinates of the crosspoints are _lambda_ and _ki_.
 
 ### Verify the crosspoints
-Run the "Solution 1" cell of "cal_lambda_ki_kp_bode.m" to double check if the crosspoint is the solution of the equations. 
+Run the "Solution 1" cell of "cal_lambda_ki_kp_bode.m" to double check if the crosspoint is the REAL solution of the equations. If _ki_ is complex number, there's no real solution. It means the phase curve at cross-over frequency can not be flat under current cross-over frequency _omega_c_ and phase margin _phi_. Either change them or use optimization method to make the derivate of phase the smallest at cross-over frequency.
 
 ### Verify the tuned FOPD controller
 Run the "Verify the controller 1" cell of "cal_lambda_ki_kp_bode.m" to verify if the phase curve is flat at crossover frequency. At the same time _kp_ will be displayed. The we can get the transfer function of the tuned FOPD controller.
