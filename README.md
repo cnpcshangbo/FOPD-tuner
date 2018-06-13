@@ -46,7 +46,7 @@ git clone https://github.com/cnpcshangbo/FOPD-tunner.git
 
 ## Tune IOPID controller
 Enter the folder named "1. iopid_tune_pid", open "iopid_tune.m", update the plant parameters identified with MATLAB System Identification Toolbox and set cross-over frequency _omega_c_ and phase margin _phi_.
-```
+```matlab
 %% Setting plant parameters
 global K T1 wc phi %inputs
 K = -0.8592; %plant gain
