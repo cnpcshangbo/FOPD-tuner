@@ -1,4 +1,4 @@
-clear;
+%clear;
 global K T1
 global iokp ioki iokd
 global lamda ki kp
