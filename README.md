@@ -1,4 +1,4 @@
-# FOPD-tunner
+# FOPD-tuner
 Fractional order proportional derivative controller tuner
 
 # Related Publications:
