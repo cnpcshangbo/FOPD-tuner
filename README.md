@@ -1,4 +1,4 @@
-# FOPD-tunner
+# FOPD-tuner
 Fractional order proportional derivative controller tuner
 
 # Related Publications:
@@ -12,7 +12,7 @@ If you use FOPD-tunner in an academic work, please cite:
     @inproceedings{shang2016fractional,
       title={Fractional order robust visual servoing control of a quadrotor UAV with larger sampling period},
       author={Shang, Bo and Liu, Jianxin and Zhao, Tiebiao and Chen, YangQuan},
-      booktitle={Unmanned Aircraft Systems (ICUAS), 2016 International Conference on},
+      booktitle={2016 International Conference on Unmanned Aircraft Systems (ICUAS)},
       pages={1228--1234},
       year={2016},
       organization={IEEE}
@@ -49,7 +49,7 @@ Enter the folder named "1. iopid_tune_pid", open "iopid_tune.m", update the plan
 ```matlab
 %% Setting plant parameters
 global K T1 wc phi %inputs
-K = -0.8592; %plant gain
+K = 0.8592; %plant gain
 T1 = 1.0710; %plant time constant
 wc = 1.2; %crossoverfrequency
 phi = 83.9; %phase margin
