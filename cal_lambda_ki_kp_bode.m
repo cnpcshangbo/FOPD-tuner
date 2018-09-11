@@ -1,4 +1,14 @@
-%%% This is comments. Please contact cnpcshangbo@gmail.com
+% Calculates lambda, ki and kp with graphic method
+%% Outputs: lambda, ki and kp
+% Fractional order: lambda
+% Integrator gain: ki
+% Proportional gain: kp
+%
+%% Inputs: wc, phi
+% Crossover frequency: wc
+% Phase margin: phi.
+% 
+% Bo Shang: cnpcshangbo@gmail.com
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Setting parameters and plotting ki against lambda
 lamda=-1:0.0001:-0;
