@@ -27,7 +27,7 @@ lamda=Lambda;
 
 
 s=fotf('s');
-c_tf=kp*(1+ki/s^lamda);
+c_tf=kp*(1+ki/(s^lamda));
 p_tf=k/(tau*s+1)/s;
 sys_tf=c_tf*p_tf;
 %
