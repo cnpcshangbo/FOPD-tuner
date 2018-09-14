@@ -1,9 +1,9 @@
 %% Setting plant parameters
 global K T1 wc phi %inputs
-K = 0.8592; %plant gain
-T1 = 1.0710; %plant time constant
-wc = 1.2; %crossover frequency
-phi = 83.9; %phase margin
+K = 1.0263; %plant gain
+T1 = 0.71; %plant time constant
+wc = 2; %crossover frequency
+phi = 90; %phase margin
 
 global iokp ioki iokd
 

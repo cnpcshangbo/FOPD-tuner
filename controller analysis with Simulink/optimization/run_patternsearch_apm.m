@@ -2,10 +2,10 @@ clear;
 x0 = [-0.9694,0.6192]; % start point away from the minimum
 A=[];b=[];Aeq=[];beq=[];
 lb=[-2,0];
-ub=[2,10];
+ub=[2,5];
 global wc phi_m
 wc=2.51; 
-phi_m=83.9;
+phi_m=90;
 omega=wc;
 
 x = patternsearch(@obj_fun_apm,x0,A,b,Aeq,beq,lb,ub);

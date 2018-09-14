@@ -32,7 +32,8 @@ w=wc*0.5;
 APM3 = atan2(kd*w^lambda*sin(pi*lambda/2),(1+kd*w^lambda*cos(pi*lambda/2)))...
     +atan2(1,T1*w);
 
-APM = abs(phi_m-APM1/pi*180)+abs(phi_m-APM2/pi*180)+abs(phi_m-APM3/pi*180);
+% APM = abs(phi_m-APM1/pi*180)+abs(phi_m-APM2/pi*180)+abs(phi_m-APM3/pi*180);
+APM = 10^2*abs(phi_m-APM1/pi*180)-APM2/pi*180-APM3/pi*180;
 % to get the min value max, so we use a negative symbol.
 
 end

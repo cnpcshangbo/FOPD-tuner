@@ -11,7 +11,7 @@
 % Bo Shang: cnpcshangbo@gmail.com
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Setting parameters and plotting ki against lambda
-lamda=-1:0.0001:-0;
+lamda=-1:0.0001:0;
 global K T1 wc phi
 k = K;%plant gain. p(s)=\frac{k}{\tau s+1}\frac{1}{s}
 tao = T1;%plant time constant
