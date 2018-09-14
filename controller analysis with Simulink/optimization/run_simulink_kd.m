@@ -3,7 +3,7 @@ global K T1
 global iokp ioki iokd
 global lamda kd kp
 assignin('base','Kp',kp);
-assignin('base','Ki',kd);
+assignin('base','Kd',kd);
 assignin('base','Lambda',lamda);
 %
 assignin('base','ioKp',iokp);
@@ -13,7 +13,7 @@ assignin('base','ioKd',iokd);
 assignin('base','tau',T1);
 assignin('base','k',K);
 
-[t_time,x_state,y_out]=sim('verify1.slx',[0,10]);
+[t_time,x_state,y_out]=sim('model.slx',[0,10]);
 %% draw step response comparison
 figure(1)
 plot(FOPD.Time,FOPD.Data,'-',IOPID.Time,IOPID.Data,'--')
@@ -22,7 +22,7 @@ legend('FOPD','IOPID')
 %disp('y_out');
 %disp(y_out);
 kp=Kp;
-kd=Ki;
+kd=Kd;
 lamda=Lambda;
 
 
