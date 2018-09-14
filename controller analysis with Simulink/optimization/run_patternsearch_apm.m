@@ -4,8 +4,8 @@ A=[];b=[];Aeq=[];beq=[];
 lb=[-2,0];
 ub=[2,5];
 global wc phi_m
-wc=2.51; 
-phi_m=90;
+wc=2; 
+phi_m=100;
 omega=wc;
 
 x = patternsearch(@obj_fun_apm,x0,A,b,Aeq,beq,lb,ub);
@@ -32,7 +32,7 @@ kp=omega*(tau^2*omega^2+1)^0.5/Jomega/k; %kp %
 %%
 global iokp ioki iokd
 
-ioKp=2.89;ioKi=1.04;ioKd=1.79;
+ioKp = 1.95;ioKi = 0.369;ioKd = 1.48;
 iokp=ioKp;ioki=ioKi;iokd=ioKd;
 s=fotf('s');
 c_tf=kp*(1+kd*(s^lambda));%Test
