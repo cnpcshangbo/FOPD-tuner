@@ -5,7 +5,7 @@ K=1.0263; T1=0.71;
 global lambda kd kp lambda_apm kd_apm kp_apm
 % Using APM:
 % lambda_apm=0.9748; kd_apm=0.5958; kp_apm=2.7721;
-lambda=0.9694; kd=0.6192; kp=2.6991;
+% lambda=0.9694; kd=0.6192; kp=2.6991;
 lambda_apm=lambda; kd_apm=kd; kp_apm=kp;
 assignin('base','Kp_apm',kp_apm);
 assignin('base','Kd_apm',kd_apm);
