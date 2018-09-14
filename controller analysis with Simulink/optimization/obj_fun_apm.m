@@ -17,9 +17,9 @@ T1 = 0.71;
 tau=T1;k=K;
 
 % Controller design specifications
-global wc
+global wc phi_m
 % wc = 2.51; %crossover frequency
-phi_m=83.9;
+% phi_m=83.9;
 
 %% Step two: Calculate area phase margin to build the objective function
 w=wc;
