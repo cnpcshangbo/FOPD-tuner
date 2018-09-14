@@ -37,7 +37,7 @@ global iokp ioki iokd
 ioKp=2.89;ioKi=1.04;ioKd=1.79;
 iokp=ioKp;ioki=ioKi;iokd=ioKd;
 s=fotf('s');
-c_tf=kp*(1+ki/(s^lambda));
+c_tf=kp*(1+ki*(s^lambda));%Test
 p_tf=k/(tau*s+1)/s;
 sys_tf=c_tf*p_tf;
 %

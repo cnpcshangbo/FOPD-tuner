@@ -23,13 +23,15 @@ global wc
 phi_m=83.9;
 %% Step two: Calculate area phase margin to build the objective function
 w=wc;
-APM1 = atan2(ki*w^lambda*sin(pi*lambda/2),(1+ki*w^lambda*cos(pi*lambda/2)))+atan2(1,T1*w);
+APM1 = atan2(ki*w^lambda*sin(pi*lambda/2),(1+ki*w^lambda*cos(pi*lambda/2)))...
+    +atan2(1,T1*w);
 omega=wc;
-Jomega=((1+ki*omega.^(lambda).*cos(pi*lambda/2))^2+(ki*omega.^(lambda).*sin(pi*lambda/2))^2)^0.5;
+Jomega=((1+ki*omega.^(lambda).*cos(pi*lambda/2))^2+...
+    (ki*omega.^(lambda).*sin(pi*lambda/2))^2)^0.5;
 kp=omega*(tau^2*omega^2+1)^0.5/Jomega/k; %kp %
 
 s=fotf('s');
-c_tf=kp*(1+ki/(s^lambda));
+c_tf=kp*(1+ki*(s^lambda)); %Test
 p_tf=k/(tau*s+1)/s;
 sys_tf=c_tf*p_tf;
 
@@ -38,15 +40,19 @@ sys_tf=c_tf*p_tf;
 [Gm,Pm,Wcg,Wcp]=margin(sys_tf);
 APM1=Pm;
 % w=wc*1.5;
-% APM2 = atan(ki*w^lambda*sin(pi*lambda/2)/(1+ki*w^lambda*cos(pi*lambda/2)))+atan(1/T1*w);
+% APM2 = atan(ki*w^lambda*sin(pi*lambda/2)/(1+ki*w^lambda*cos(pi*lambda/2)))...
+% +atan(1/T1*w);
 % w=wc*0.5;
-% APM3 = atan(ki*w^lambda*sin(pi*lambda/2)/(1+ki*w^lambda*cos(pi*lambda/2)))+atan(1/T1*w);
+% APM3 = atan(ki*w^lambda*sin(pi*lambda/2)/(1+ki*w^lambda*cos(pi*lambda/2)))...
+% +atan(1/T1*w);
 
 
 
-% APM = abs(83.9/180*pi-mean([APM1,APM2,APM3]));% to get the min value max, so we use a negative symbol.
+% APM = abs(83.9/180*pi-mean([APM1,APM2,APM3]));
+% to get the min value max, so we use a negative symbol.
 % Arg = phi_m/180*pi;
-% APM = abs(Arg-APM1) + abs(Arg-APM2) + abs(Arg-APM3);% to get the min value max, so we use a negative symbol.
+% APM = abs(Arg-APM1) + abs(Arg-APM2) + abs(Arg-APM3);
+% to get the min value max, so we use a negative symbol.
 APM = abs(phi_m-APM1);% to get the min value max, so we use a negative symbol.
 
 
