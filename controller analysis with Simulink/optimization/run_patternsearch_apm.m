@@ -4,8 +4,9 @@ A=[];b=[];Aeq=[];beq=[];
 lb=[-2,0];
 ub=[2,10];
 global wc phi_m
-wc=2.51; % wc
-omega=wc;phi_m=83.9;
+wc=2.51; 
+phi_m=83.9;
+omega=wc;
 
 x = patternsearch(@obj_fun_apm,x0,A,b,Aeq,beq,lb,ub);
 
