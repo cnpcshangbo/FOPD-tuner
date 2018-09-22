@@ -1,7 +1,10 @@
 %clear;
 global K T1
+K=0.8592;T1=1.0710;
 global iokp ioki iokd
+iokp=1.58;ioki=0.182;iokd=1.49;
 global lamda ki kp
+lamda=-0.9885;ki=0.8829;kp=1.5489;
 assignin('base','Kp',kp);
 assignin('base','Ki',ki);
 assignin('base','Lambda',lamda);
