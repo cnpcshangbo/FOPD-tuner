@@ -9,11 +9,11 @@ phi_m=100;
 omega=wc;
 
 x = patternsearch(@obj_fun_apm,x0,A,b,Aeq,beq,lb,ub);
-
+disp('%%%%%%%%%% lambda and kd:')
 disp(x);
 
 APM = obj_fun_apm(x);
-
+disp('%%%%%%%%%% objective function value:')
 disp(APM);
 %%
 global lamda kd kp
