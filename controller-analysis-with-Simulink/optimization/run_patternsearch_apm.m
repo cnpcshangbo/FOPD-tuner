@@ -1,3 +1,6 @@
+%% 
+% 
+
 clear;
 x0 = [-0.9694,0.6192]; % start point away from the minimum
 A=[];b=[];Aeq=[];beq=[];
