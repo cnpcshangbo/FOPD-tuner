@@ -40,7 +40,7 @@ legend('ki0','ki1','ki2')
 %% Solution 1
 % To verify the crosspoint with ki1
 global lamda ki kp
-lamda=-0.9885; % update lambda value here, make sure the value is negative.
+lamda=-0.9694; % update lambda value here, make sure the value is negative.
 a=tao*omega.^(-2*lamda);
 b=-lamda.*sin(pi*lamda/2).*omega.^(-lamda-1)*(omega^2*tao^2+1)+2*tao*omega.^(-lamda).*cos(pi*lamda/2);
 c=tao;

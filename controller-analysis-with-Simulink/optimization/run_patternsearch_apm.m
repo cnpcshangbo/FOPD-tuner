@@ -7,8 +7,8 @@ A=[];b=[];Aeq=[];beq=[];
 lb=[-2,0];
 ub=[2,5];
 global wc phi_m
-wc=2; 
-phi_m=90;
+% wc=2; 
+phi_m=83.9;
 omega=wc;
 
 x = patternsearch(@obj_fun_apm,x0,A,b,Aeq,beq,lb,ub);
