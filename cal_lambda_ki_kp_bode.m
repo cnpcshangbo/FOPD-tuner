@@ -33,8 +33,8 @@ ki2=(-b-(b.^2-4*a*c).^0.5)./(2*a);
 
 figure(1)
 plot(lamda, ki0,'r-.',lamda, ki1,'b-', lamda, ki2,'g-')
-xlabel('lambda');ylabel('ki');
-legend('ki0','ki1','ki2')
+xlabel('Fractional order \lambda');ylabel('Fractional order controller derivative gain K_d');
+legend('kd0','kd1','kd2')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\lambda=-0.9855;ki2=0.2431
 %% Solution 1
