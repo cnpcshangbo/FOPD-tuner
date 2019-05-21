@@ -1,3 +1,6 @@
+# Note that 
+This work has been merged into: https://github.com/Fractional-order-controller/FOFC_Benchmark
+
 # Getting started:
 * Run "run_patternsearch_apm.m";
 * Run "run_simulink_kd.m".
